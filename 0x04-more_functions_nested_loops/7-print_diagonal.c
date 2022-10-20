@@ -1,23 +1,29 @@
 #include "main.h"
 
 /**
- * print_line - This function prints a line for a given input
- * @n: Limit the line to be printed
+ * print_diagonal - This function prints a diagonal
  *
+ * @n: Controls the diagonal to be printed
  * Return: Nothing
  */
 
-void print_line(int n)
+void print_diagonal(int n)
 {
-	int i;
+	int i, j;
 
-	for (i = 0; i < n; i++)
+	if (n <= 0)
 	{
-		if (n <= 0)
+		_putchar('\n');
+	} else
+	{
+		for (i = 0; i < n; i++)
 		{
-			break;
+			for (j = i; j > 0; j--)
+			{
+				_putchar(' ');
+			}
+			_putchar('\\');
+			_putchar('\n');
 		}
-		_putchar('_');
 	}
-	_putchar('\n');
 }
